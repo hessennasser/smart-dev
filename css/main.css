@@ -370,6 +370,75 @@ ul {
 }
 
 
+/* start up button  */
+.up-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 10px;
+    z-index: 20;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s;
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    display: flex;
+    bottom: -70px;
+    transition: 0.5s;
+    color: var(--main-color);
+    animation: up-move 2s linear infinite;
+}
+
+.up-btn.active {
+    bottom: 20px;
+}
+
+.up-btn i {
+    font-size: 36px;
+}
+
+.up-btn:hover {
+    transform: translateY(-20px);
+}
+
+/* end up button  */
+/* start whats app btn  */
+.whats-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    left: 10px;
+    z-index: 20;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s;
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    display: flex;
+    bottom: -70px;
+    transition: 0.5s;
+    color: var(--main-color);
+    animation: up-move 2s linear infinite;
+}
+
+.whats-btn.active {
+    bottom: 20px;
+}
+
+.whats-btn i {
+    font-size: 36px;
+}
+
+.whats-btn:hover {
+    transform: translateY(-20px);
+}
+
+/* end whats app btn  */
+
 /* end components  */
 /* start header  */
 header {
@@ -710,7 +779,7 @@ header .nav li a:hover {
 .services .content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    gap: 35px;
 }
 
 .services .content .box {
@@ -768,6 +837,12 @@ header .nav li a:hover {
     border-radius: 20px;
     box-shadow: 5px 5px 10px 0px #4f4f4f;
     min-height: 100%;
+    transition: var(--main-transition);
+}
+
+.projects .content .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 10px 2px #4f4f4f;
 }
 
 .projects .content .card img {
@@ -1197,6 +1272,7 @@ section.salla .content .card .links-box a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 70px;
 }
 
 .footer .container {
@@ -1232,31 +1308,17 @@ section.salla .content .card .links-box a {
 }
 
 @media (max-width: 767px) {
+    .footer .container {
+        padding: 0 40px;
+        flex-direction: column;
+        text-align: center;
+    }
+
     .footer-title {
         font-size: .8em;
     }
 }
 
-/* start up button  */
-.footer .up-btn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    color: var(--main-color);
-    position: relative;
-    animation: up-move 2s linear infinite;
-}
-
-.footer .up-btn i {
-    font-size: 1.5em;
-}
-
-/* end up button  */
 /* end footer  */
 
 .dis-none {
@@ -1269,9 +1331,24 @@ section.salla .content .card .links-box a {
     }
 }
 
+.tools {
+    margin-top: 20px;
+    text-align: center;
+}
 
+.tools span {
+    padding: 0px 5px;
+    background-color: rgb(41 172 255 / 30%);
+    color: #00000080;
+    border-radius: 6px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: var(--main-transition)
+}
 
-
+.tools span:hover {
+    background-color: rgb(39 24 126 / 30%);
+}
 
 
 
@@ -1312,11 +1389,11 @@ section.salla .content .card .links-box a {
 
     0%,
     100% {
-        top: 0;
+        transform: translateY(-20px);
     }
 
     50% {
-        top: -15px;
+        transform: translateY(5px);
     }
 }
 
